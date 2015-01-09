@@ -24,9 +24,10 @@ def edit(request):
 @view_config(route_name='delete')
 def delete(request):
     if request.POST:
-        print request.POST.get('user')
-        one = DBSession.query(Paste).filter_by(email=request.POST.get('user')).first()
-        print one.text
+        final = (request.POST.get('user').lstrip('"')).rstrip('"')
+        one = DBSession.query(Paste).filter_by(email=final).first()
+        DBSession.delete(one)
+        return HTTPFound(location = request.route_url('pastes'))
     return {}
 
 # /howdy?name=alice which links to the next view

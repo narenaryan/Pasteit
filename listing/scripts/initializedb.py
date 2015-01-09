@@ -36,7 +36,6 @@ def main(argv=sys.argv):
     engine = engine_from_config(settings, 'sqlalchemy.')
     DBSession.configure(bind=engine)
     Base.metadata.create_all(engine)
-    Paste.metadata.create_all(engine)
     with transaction.manager:
         model = Paste(email='narenarya@live.com', text='Git is excellent',time='Fri Jan  9 13:52:01 2015')
         DBSession.add(model)
