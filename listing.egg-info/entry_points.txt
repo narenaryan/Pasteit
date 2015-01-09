@@ -1,0 +1,5 @@
+      [paste.app_factory]
+      main = listing:main
+      [console_scripts]
+      initialize_listing_db = listing.scripts.initializedb:main
+      
