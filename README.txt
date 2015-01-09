@@ -1,5 +1,5 @@
 Pyramid template project for creating websites like redditt and pastebin
-================================================================
+=========================================================================
 
 Getting Started
 ---------------
